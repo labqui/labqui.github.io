@@ -11,7 +11,7 @@
       console.log("log(labqui.github.io:48)", resp)
 
       // Start the Chart creation
-      // anychart.onDocumentReady(function () {
+      anychart.onDocumentReady(function () {
 
         // create data variable for the chart
         var data = {
@@ -32,7 +32,7 @@
         chart.container("container");
         chart.draw();
         console.log("log(labqui.github.io:41)", "draw")
-      // });
+      });
 
       // document.write(JSON.stringify(resp));
     }
