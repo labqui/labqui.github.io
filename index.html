@@ -13,33 +13,25 @@
       // Start the Chart creation
       // anychart.onDocumentReady(function () {
 
-        // Fetch Data from the API
-        fetch('https://api.apispreadsheets.com/data/422/?dataFormat=matrix')
-          .then((response) => {
-            return response.json();
-          })
-          .then((myJson) => {
+        // create data variable for the chart
+        var data = {
+          header: ["x", "y"],
+          rows: [["A", 2], ["B", 5], ["C", 6], ["D", 2]]
+        }
 
-            // create data variable for the chart
-            var data = {
-              header: ["x", "y"],
-              rows: [["A", 2], ["B", 5], ["C", 6], ["D", 2]]
-            }
+        // create the chart
+        var chart = anychart.column();
 
-            // create the chart
-            var chart = anychart.column();
+        // add the data
+        chart.data(data);
 
-            // add the data
-            chart.data(data);
+        // set the chart title
+        chart.title("Super Bowl Wins");
 
-            // set the chart title
-            chart.title("Super Bowl Wins");
-
-            // draw
-            chart.container("container");
-            chart.draw();
-            console.log("log(labqui.github.io:41)", "draw")
-          });
+        // draw
+        chart.container("container");
+        chart.draw();
+        console.log("log(labqui.github.io:41)", "draw")
       // });
 
       // document.write(JSON.stringify(resp));
