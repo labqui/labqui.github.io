@@ -60,9 +60,7 @@ function handleTqResponse(resp) {
           // create data variable for the chart
           var data = {
             header: ["x", "y"],
-            rows: resp.table.rows.map( v => {
-              console.log("log(labqui.github.io:64)", y)
-            })
+            rows: [[1,2], [4, 5]]
           }
 
           // create the chart
@@ -80,5 +78,5 @@ function handleTqResponse(resp) {
         });
       });
 
-  document.write(JSON.stringify(resp));
+  // document.write(JSON.stringify(resp));
 }
