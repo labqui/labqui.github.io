@@ -46,5 +46,39 @@ function makeApiCall() {
 
 function handleTqResponse(resp) {
   console.log("log(labqui.github.io:48)", resp)
+
+      // Start the Chart creation
+      anychart.onDocumentReady(function() {
+
+        // Fetch Data from the API
+        fetch('https://api.apispreadsheets.com/data/422/?dataFormat=matrix')
+        .then((response) => {
+            return response.json();
+        })
+        .then((myJson) => {
+
+          // create data variable for the chart
+          var data = {
+            header: ["x", "y"],
+            rows: resp.table.rows.map( v => {
+              console.log("log(labqui.github.io:64)", y)
+            })
+          }
+
+          // create the chart
+          var chart = anychart.column();
+
+          // add the data
+          chart.data(data);
+
+          // set the chart title
+          chart.title("Super Bowl Wins");
+
+          // draw
+          chart.container("container");
+          chart.draw();
+        });
+      });
+
   document.write(JSON.stringify(resp));
 }
