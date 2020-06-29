@@ -45,5 +45,6 @@ function makeApiCall() {
 }
 
 function handleTqResponse(resp) {
+  console.log("log(labqui.github.io:48)", resp)
   document.write(JSON.stringify(resp));
 }
